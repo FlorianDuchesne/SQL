@@ -70,9 +70,8 @@ SELECT nom FROM villageois LEFT JOIN boit ON villageois.ID_VILLAGEOIS = boit.ID_
 -- 14) Noms des villages qui contiennent la particule 'um'
 SELECT `NOM_LIEU` FROM `lieu` WHERE `NOM_LIEU` LIKE '%um%' 
 -- 15) Nom du / des villageois qui n'ont pas le droit de boire la potion 'Rajeunissement II'
-SELECT nom, nom_potion FROM `peut` p, villageois v, potion po WHERE A_LE_DROIT = 0 AND nom_potion = 'Rajeunissement II' AND v.ID_VILLAGEOIS = p.ID_VILLAGEOIS AND po.ID_POTION = p.ID_POTION 
+SELECT nom FROM `peut` p, villageois v, potion po WHERE A_LE_DROIT = 0 AND nom_potion = 'Rajeunissement II' AND v.ID_VILLAGEOIS = p.ID_VILLAGEOIS AND po.ID_POTION = p.ID_POTION 
 (marche aussi avec false au lieu de 0)
-
 
 ------
 
